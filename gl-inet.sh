@@ -272,7 +272,7 @@ set_glfan_temp() {
 }
 
 rollback_old_version() {
-	download_url="https://ghproxy.com/https://github.com/wukongdaily/gl-inet-onescript/raw/1f25c161512e9b416227f60656e8c2139c993f69/gl-inet.run"
+	download_url="https://github.com/wukongdaily/gl-inet-onescript/raw/1f25c161512e9b416227f60656e8c2139c993f69/gl-inet.run"
 	local_file_path="/tmp/gl-inet.run"
 	wget -O "$local_file_path" "$download_url"
 	chmod +x "$local_file_path"
@@ -286,12 +286,12 @@ recovery_opkg_settings() {
 	*3000*)
 		echo "Router name contains '3000'."
 		mt3000_opkg="https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/mt-3000/distfeeds.conf"
-		wget -O /etc/opkg/distfeeds.conf ${proxy_github}${mt3000_opkg}
+		wget -O /etc/opkg/distfeeds.conf ${mt3000_opkg}
 		;;
 	*2500*)
 		echo "Router name contains '2500'."
 		mt2500a_opkg="https://raw.githubusercontent.com/wukongdaily/gl-inet-onescript/master/mt-2500a/distfeeds.conf"
-		wget -O /etc/opkg/distfeeds.conf ${proxy_github}${mt2500a_opkg}
+		wget -O /etc/opkg/distfeeds.conf ${mt2500a_opkg}
 		;;
 	*)
 		echo "Router name does not contain '3000' or '2500'."
